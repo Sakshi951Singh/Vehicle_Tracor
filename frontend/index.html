@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Movement on Map</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        #map {
+            height: 500px;
+            width: 100%;
+            margin-top: 20px;
+        }
+        h1 {
+            color: brown;
+            text-align: center;
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Vehicle Movement by Date</h1>
+
+    <label for="connectionType">Connection Type:</label>
+    <select id="connectionType">
+        <option value="wireless">Wireless</option>
+        <option value="wired">Wired</option>
+        <!-- Add more options as needed -->
+    </select><br>
+
+    
+    <label for="time-frame">Select Day:</label>
+    <select id="time-frame">
+        <option value="2024-09-24">2024-09-24</option>
+        <option value="2024-09-23">2024-09-23</option>
+        <option value="2024-09-22">2024-09-22</option>
+        <option value="2024-09-21">2024-09-21</option>
+        <option value="2024-09-20">2024-09-20</option>
+        <option value="2024-09-19">2024-09-19</option>
+        <option value="2024-09-18">2024-09-18</option>
+    </select>
+    <br>
+    <button id="show-button">Show</button>
+
+    <!-- Map container -->
+    <div id="map"></div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-rotatedmarker/leaflet.rotatedMarker.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
