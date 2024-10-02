@@ -16,3 +16,6 @@
   "license": "ISC",
   "description": ""
 }
+"scripts": {
+  "start": "node backend/server.js"
+}
