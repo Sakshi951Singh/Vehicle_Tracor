@@ -4,7 +4,7 @@ const cors = require('cors');
 const path = require('path');
 const fs = require('fs');  // To read the dummy data file
 
-app.use(cors()); // Enable CORS for cross-origin requests
+app.use(cors({ origin: '*' })); // Enable CORS for cross-origin requests
 
 // Serve static files from the 'frontend' directory
 app.use(express.static(path.join(__dirname, '../frontend')));
@@ -70,6 +70,8 @@ app.get('/', (req, res) => {
 });
 
 // Start the server
-app.listen(3000, () => {
-    console.log('Server running on http://localhost:3000');
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
 });
