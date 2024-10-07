@@ -25,14 +25,24 @@ function initMap() {
     }).addTo(map);
 }
 
+// async function fetchVehicleData() {
+//     try {
+//         const response = await fetch('http://localhost:3000/api/vehicle-location');
+//         return await response.json();
+//     } catch (error) {
+//         console.error('Error fetching vehicle data:', error);
+//     }
+// }
 async function fetchVehicleData() {
     try {
-        const response = await fetch('http://localhost:3000/api/vehicle-location');
+        const response = await fetch('https://vehicle-tracor-project.onrender.com/api/vehicle-location');  // Updated URL
         return await response.json();
     } catch (error) {
         console.error('Error fetching vehicle data:', error);
     }
 }
+
+
 
 function updateVehiclePosition(position, nextPosition, data) {
     const angle = calculateAngle(position, nextPosition);
@@ -59,9 +69,20 @@ function calculateAngle(position, nextPosition) {
     return (Math.atan2(lngDiff, latDiff) * 180 / Math.PI) + 90;
 }
 
+// async function fetchRouteData(date) {
+//     try {
+//         const response = await fetch(`http://localhost:3000/api/vehicle-route/${date}`);
+//         if (!response.ok) throw new Error('Data not found');
+//         return await response.json();
+//     } catch (error) {
+//         console.error('Error fetching route data:', error);
+//         alert('Error fetching route data. Please try again.');
+//         return [];
+//     }
+// }
 async function fetchRouteData(date) {
     try {
-        const response = await fetch(`http://localhost:3000/api/vehicle-route/${date}`);
+        const response = await fetch(`https://vehicle-tracor-project.onrender.com/api/vehicle-route/${date}`);  // Updated URL
         if (!response.ok) throw new Error('Data not found');
         return await response.json();
     } catch (error) {
@@ -70,6 +91,7 @@ async function fetchRouteData(date) {
         return [];
     }
 }
+
 
 function drawRoute(routeCoords) {
     if (routeLine) {
